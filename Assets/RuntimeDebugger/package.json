@@ -1,0 +1,30 @@
+{
+    "name": "com.runtimedebugger.core",
+    "version": "1.0.0",
+    "displayName": "Unity Runtime Debugger",
+    "description": "Low-overhead runtime observability & deep debugging infrastructure for Unity. Captures business events, state changes, object lifecycle, async operations, and resource operations into structured Incident Bundles for AI-assisted analysis.",
+    "unity": "2022.3",
+    "unityRelease": "0f1",
+    "documentationUrl": "https://github.com/runtime-debugger/docs",
+    "changelogUrl": "https://github.com/runtime-debugger/changelog",
+    "licensesUrl": "https://github.com/runtime-debugger/license",
+    "keywords": [
+        "debugger",
+        "runtime",
+        "profiler",
+        "trace",
+        "ai",
+        "observability",
+        "incident"
+    ],
+    "author": {
+        "name": "Runtime Debugger Team",
+        "email": "noreply@runtime-debugger.dev",
+        "url": "https://github.com/runtime-debugger"
+    },
+    "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.uielements": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0"
+    }
+}

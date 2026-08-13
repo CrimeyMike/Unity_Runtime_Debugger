@@ -105,3 +105,17 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Codely CLI
+/.codely-cli/
+/.codely.packages/
+/.codelyignore
+/.com-unity-codely.json
+/CODELY.md
+/mem-log/
+
+# Screenshots (local only)
+/screenshots/
+
+# Test results
+/TestResults.xml
