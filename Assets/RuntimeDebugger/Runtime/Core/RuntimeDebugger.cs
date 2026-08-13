@@ -74,11 +74,18 @@ namespace RuntimeDebugger
             s_initialized = true;
             s_enabled = true;
 
-            Debug.Log("[RuntimeDebugger] Initialized.");
+            // Enable zero-setup auto-instrumentation:
+            // - All Debug.Log calls auto-captured as events
+            // - Exception / FrameSpike / GCSpike triggers auto-registered
+            AutoInstrumentation.Enable();
+
+            Debug.Log("[RuntimeDebugger] Initialized. Auto-instrumentation active — " +
+                      "exception/performance triggers running, Debug.Log auto-capture enabled.");
         }
 
         public static void Shutdown()
         {
+            AutoInstrumentation.Disable();
             s_traceTree?.Clear();
             s_eventBuffer?.Clear();
             s_stateRegistry?.Clear();
