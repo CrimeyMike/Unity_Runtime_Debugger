@@ -77,10 +77,22 @@ namespace RuntimeDebugger
             // Enable zero-setup auto-instrumentation:
             // - All Debug.Log calls auto-captured as events
             // - Exception / FrameSpike / GCSpike triggers auto-registered
+            // - Scene objects auto-monitored (no game code changes needed)
             AutoInstrumentation.Enable();
 
-            Debug.Log("[RuntimeDebugger] Initialized. Auto-instrumentation active — " +
-                      "exception/performance triggers running, Debug.Log auto-capture enabled.");
+            // Auto-install scene monitor (creates a hidden GameObject)
+            // This only works in Play Mode — in Edit Mode the Editor window handles updates
+            if (Application.isPlaying)
+            {
+                AutoSceneMonitor.Install();
+            }
+
+            Debug.Log("[RuntimeDebugger] Initialized. Zero-code auto-instrumentation active:\n" +
+                      "  ✅ Exception / FrameSpike / GCSpike triggers (auto)\n" +
+                      "  ✅ Debug.Log auto-capture (auto)\n" +
+                      "  ✅ Scene object lifecycle tracking (auto)\n" +
+                      "  ✅ Performance metrics sampling (auto)\n" +
+                      "No game code modification needed.");
         }
 
         public static void Shutdown()
