@@ -119,3 +119,6 @@ InitTestScene*.unity*
 
 # Test results
 /TestResults.xml
+
+# Project proposal (internal only)
+/Unity_Runtime_Debugger_项目方案书.md
